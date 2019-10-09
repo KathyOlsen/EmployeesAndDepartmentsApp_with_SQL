@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Department Details</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<div class="container">
+    <h1 style="color: blue">Department Details</h1>
+    Department Name: <span th:text="${department.department_name}"></span><br />
+
+    <span>Employees:</span><br>
+    <tr>
+        <th>First Name&nbsp;&nbsp;</th>
+        <th>Last Name&nbsp;&nbsp;</th>
+        <th>Address&nbsp;&nbsp;</th>
+        <th>City&nbsp;&nbsp;</th>
+        <th>State&nbsp;&nbsp;</th>
+        <th>Zip&nbsp;&nbsp;</th>
+        <th>Job Title&nbsp;&nbsp;</th>
+
+    </tr>
+    <tr th:each="employee : ${department.employees}">
+        <td th:text="${employee.first_name}"></td>
+        <td th:text="${employee.last_name}"></td>
+        <td th:text="${employee.address}"></td>
+        <td th:text="${employee.city}"></td>
+        <td th:text="${employee.state}"></td>
+        <td th:text="${employee.zip}"></td>
+        <td th:text="${employee.job_title}"></td>
+    </tr>
+</div>
+
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

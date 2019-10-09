@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Department Form</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container">
+    <div class="jumbotron">
+        <h1 style="color: blue">Department Form</h1>
+        <form action="#" th:action="@{/processdepartment}" th:object="${department}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            Department Name:&nbsp;<input type="text" th:field="*{department_name}" />
+            <span th:if="${#fields.hasErrors('department_name')}" th:errors="*{department_name}"></span>
+            <br>
+            <button type="submit" style="color: blue"><b>Submit</b></button>
+        </form>
+    </div>
+</div>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

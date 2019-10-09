@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee List</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container">
+    <h1 style="color: blue">Employee List</h1>
+    <table>
+        <tr>
+            <th>First Name&nbsp;&nbsp;</th>
+            <th>Last Name&nbsp;&nbsp;</th>
+            <th>Address&nbsp;&nbsp;</th>
+            <th>City&nbsp;&nbsp;</th>
+            <th>State&nbsp;&nbsp;</th>
+            <th>Zip&nbsp;&nbsp;</th>
+            <th>Job Title&nbsp;&nbsp;</th>
+            <th>Department&nbsp;&nbsp;</th>
+            <th>Options</th>
+        </tr>
+
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.first_name}"></td>
+            <td th:text="${employee.last_name}"></td>
+            <td th:text="${employee.address}"></td>
+            <td th:text="${employee.city}"></td>
+            <td th:text="${employee.state}"></td>
+            <td th:text="${employee.zip}"></td>
+            <td th:text="${employee.job_title}"></td>
+            <td th:text="${employee.department.department_name}"></td>
+            <td>
+                <a th:href="@{update_employee/{id}(id=${employee.id})}">Update</a>
+                <a th:href="@{detail_employee/{id}(id=${employee.id})}">Details</a>
+                <a th:href="@{delete_employee/{id}(id=${employee.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

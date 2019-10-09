@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Form</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container">
+    <div class="jumbotron">
+        <h1 style="color: blue">Employee Form</h1>
+        <form action="#" th:action="@{/processemployee}" th:object="${employee}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            First Name:&nbsp;<input type="text" th:field="*{first_name}" />
+            <span th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}">&nbsp;&nbsp;</span>
+
+            Last Name:&nbsp;&#8239;<input type="text" th:field="*{last_name}" />
+            <span th:if="${#fields.hasErrors('last_name')}" th:errors="*{last_name}"></span>
+            <br>
+            Address:&nbsp;<input type="text" th:field="*{address}" />
+            <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}">&nbsp;&nbsp;</span>
+
+            City:&nbsp;<input type="text" th:field="*{city}" />
+            <span th:if="${#fields.hasErrors('city')}" th:errors="*{city}">&nbsp;&nbsp;</span>
+            <br>
+            State:&nbsp;<input type="text" th:field="*{state}" />
+            <span th:if="${#fields.hasErrors('state')}" th:errors="*{state}">&nbsp;&nbsp;</span>
+            Zip Code:&nbsp;<input type="text" th:field="*{zip}" />
+            <span th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}"></span>
+            <br>
+            Job Title:&nbsp;<input type="text" th:field="*{job_title}" />
+            <span th:if="${#fields.hasErrors('job_title')}" th:errors="*{job_title}">&nbsp;&nbsp;</span>
+            Department:&nbsp;<select name="department" th:field="*{department}">
+            <option th:each="department : ${departments}"
+                    th:value="${department.id}"
+                    th:text="${department.department_name}"></option>
+            </select>
+            <br>
+            <button type="submit" style="color: blue"><b>Submit</b></button>
+        </form>
+    </div>
+</div>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>
