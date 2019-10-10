@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Detail</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<br>
+<div class="container">
+    <div class="jumbotron" style="padding-left: 20px">
+        <h1 style="color: blue">Employee Details</h1>
+
+        <table style="alignment: center">
+            <tr>
+                <td>First Name: &nbsp;</td>
+                <td><span th:text="${employee.first_name}"></span></td>
+            </tr>
+            <tr>
+                <td>Last Name: &nbsp;</td>
+                <td><span th:text="${employee.last_name}"></span></td>
+            </tr>
+            <tr>
+                <td>Address: &nbsp;</td>
+                <td><span th:text="${employee.address}"></span></td>
+            </tr>
+            <tr>
+                <td>City: &nbsp;</td>
+                <td><span th:text="${employee.city}"></span></td>
+            </tr>
+            <tr>
+                <td>State: &nbsp;</td>
+                <td><span th:text="${employee.state}"></span></td>
+            </tr>
+            <tr>
+                <td>Zip: &nbsp;</td>
+                <td><span th:text="${employee.zip}"></span></td>
+            </tr>
+            <tr>
+                <td>Job Title: &nbsp;</td>
+                <td><span th:text="${employee.job_title}"></span></td>
+            </tr>
+            <tr>
+                <td>Department: &nbsp;</span></td>
+                <td><span th:text="${employee.department.departmentName}"></span></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

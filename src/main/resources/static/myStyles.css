@@ -2,7 +2,7 @@ body{
     background-image: url(https://res.cloudinary.com/dhg2lpfid/image/upload/v1570167265/Attachment-1_1_vgra0i.jpg);
     background-size: cover;
     /*font-family: 'Scheherazade', serif;*/
-    font-size: 20px;
+    font-size: 18px;
 }
 
 h1{
@@ -22,6 +22,10 @@ a{
     color: darkblue;
 }
 
+button{
+    alignment: center;
+}
+
 .container{
     background-color: lightskyblue;
     width: max-content;
@@ -31,10 +35,14 @@ a{
 
 .container-fluid{
     background-color: lightskyblue;
+    width: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .jumbotron{
     background-color: lightskyblue;
+    alignment: center;
     padding-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
@@ -58,3 +66,4 @@ a{
     margin-right: auto;
     width: 100%;
 }
+

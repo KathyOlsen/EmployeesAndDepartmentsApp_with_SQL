@@ -12,8 +12,8 @@
         <h1 style="color: blue">Department Form</h1>
         <form action="#" th:action="@{/processdepartment}" th:object="${department}" method="post">
             <input type="hidden" th:field="*{id}" />
-            Department Name:&nbsp;<input type="text" th:field="*{department_name}" />
-            <span th:if="${#fields.hasErrors('department_name')}" th:errors="*{department_name}"></span>
+            Department Name:&nbsp;<input type="text" th:field="*{departmentName}" />
+            <span th:if="${#fields.hasErrors('departmentName')}" th:errors="*{departmentName}"></span>
             <br>
             <button type="submit" style="color: blue"><b>Submit</b></button>
         </form>

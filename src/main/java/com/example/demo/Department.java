@@ -14,12 +14,16 @@ public class Department {
 
     @NotNull
     @Size(min=2, max=50)
-    private String department_name;
+    private String departmentName;
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public Set<Employee> employees;
 
     public Department() {
+    }
+
+    public Department(@NotNull @Size(min = 2, max = 50) String departmentName) {
+        this.departmentName = departmentName;
     }
 
     public Long getId() {
@@ -30,12 +34,12 @@ public class Department {
         this.id = id;
     }
 
-    public String getDepartment_name() {
-        return department_name;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setDepartment_name(String department_name) {
-        this.department_name = department_name;
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
     public Set<Employee> getEmployees() {

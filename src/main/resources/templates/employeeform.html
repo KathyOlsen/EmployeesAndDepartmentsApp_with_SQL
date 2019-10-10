@@ -34,7 +34,7 @@
             Department:&nbsp;<select name="department" th:field="*{department}">
             <option th:each="department : ${departments}"
                     th:value="${department.id}"
-                    th:text="${department.department_name}"></option>
+                    th:text="${department.departmentName}"></option>
             </select>
             <br>
             <button type="submit" style="color: blue"><b>Submit</b></button>

@@ -10,15 +10,15 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <h1 style="color: blue"><b>Departments</b></h1>
             <table>
                 <tr>
-                    <th>Department Name&nbsp;</th>
+                    <th>Department Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                     <th>Options</th>
                 </tr>
                 <tr th:each="department : ${departments}">
-                    <td th:text="${department.department_name}"></td>
+                    <td th:text="${department.departmentName}"></td>
                     <td>
                         <a th:href="@{update_department/{id}(id=${department.id})}">Update</a>
                         <a th:href="@{detail_department/{id}(id=${department.id})}">Details</a>
@@ -27,19 +27,19 @@
                 </tr>
             </table>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-9">
             <h1 style="color: blue"><b>Employees</b></h1>
             <table>
                 <tr>
-                    <th>First Name&nbsp;&nbsp;</th>
-                    <th>Last Name&nbsp;&nbsp;</th>
-                    <th>Address&nbsp;&nbsp;</th>
-                    <th>City&nbsp;&nbsp;</th>
+                    <th>First&nbsp;Name&nbsp;&nbsp;</th>
+                    <th>Last&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                     <th>State&nbsp;&nbsp;</th>
-                    <th>Zip&nbsp;&nbsp;</th>
-                    <th>Job Title&nbsp;&nbsp;</th>
-                    <th>Department&nbsp;&nbsp;</th>
-                    <th>Options</th>
+                    <th>Zip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Job&nbsp;Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Department&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>Options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                 </tr>
                 <tr th:each="employee : ${employees}">
                     <td th:text="${employee.first_name}"></td>
@@ -49,7 +49,7 @@
                     <td th:text="${employee.state}"></td>
                     <td th:text="${employee.zip}"></td>
                     <td th:text="${employee.job_title}"></td>
-                    <td th:text="${employee.department.department_name}"></td>
+                    <td th:text="${employee.department.departmentName}"></td>
                     <td>
                         <a th:href="@{update_employee/{id}(id=${employee.id})}">Update</a>
                         <a th:href="@{detail_employee/{id}(id=${employee.id})}">Details</a>
